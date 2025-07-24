@@ -1,0 +1,45 @@
+@use 'util';
+
+/* Theme Defaults */
+:root {
+  // Theme Colors
+  --c-primary: #f0f;
+  --c-secondary: #ff0;
+  --c-tertiary: #f00;
+  --c-quaternary: #0f0;
+
+  --c-background: #fefefe;
+
+  --c-text: #000;
+
+  // Spacing
+  --space-page-h: 2rem;
+  --space-page-v: 5rem;
+
+  --space-button-h: 1rem;
+  --space-button-v: 0.75rem;
+
+  // Text
+  --ff-primary: sans-serif;
+  --ff-title: serif;
+
+  --fs-base: #{util.fluid(16px, 18px)};
+  --fs-h1: #{util.fluid(34px, 80px)};
+  --fs-h2: #{util.fluid(28px, 64px)};
+}
+
+/* Global Defaults */
+body {
+  color: var(--c-text);
+  background-color: var(--c-background);
+
+  font-family: var(--ff-primary);
+  font-size: var(--fs-base);
+}
+
+h1 {
+  font-family: var(--ff-title);
+  font-size: var(--fs-h1);
+}
+
+/* Util Defaults */
