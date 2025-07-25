@@ -32,7 +32,7 @@
   .logo {
     font-family: var(--font-family-brand);
     text-transform: uppercase;
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
 
   a {

@@ -1,4 +1,6 @@
-@import './chill-space-fonts.scss';
+/**
+ * Chill Space Theme
+ */
 
 :root {
   // Colors
@@ -32,7 +34,7 @@
   font-display: swap;
 }
 
-// Light
+// Bitcount Prop Single Light
 @font-face {
   font-family: 'Bitcount Prop Single';
   src: url('/fonts/BitcountPropSingle-Light.woff2') format('woff2');
@@ -41,7 +43,7 @@
   font-display: swap;
 }
 
-// Thin
+// Bitcount Prop Single Thin
 @font-face {
   font-family: 'Bitcount Prop Single';
   src: url('/fonts/BitcountPropSingle-Thin.woff2') format('woff2');
