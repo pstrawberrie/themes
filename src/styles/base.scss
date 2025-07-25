@@ -2,43 +2,56 @@
 
 /* Theme Defaults */
 :root {
-  --c-primary: #f0f;
-  --c-secondary: #ff0;
-  --c-tertiary: #f00;
-  --c-quaternary: #0f0;
-  --c-background: #fefefe;
-  --c-text: #000;
+  // Colors inherit from theme
+  // --c-primary
+  // --c-secondary
+  // --c-tertiary
+  // --c-quaternary
+  // --c-background
+  // --c-text
+  // etc
 
   // Spacing
   --space-max-width: 1200px;
 
   --space-page-h: 2rem;
-  --space-page-v: 4.2rem;
+  --space-page-v: 4rem;
 
   --space-button-h: 1rem;
   --space-button-v: 0.75rem;
 
   // Text
-  --ff-primary: sans-serif;
+  // Fonts inherit from theme
+  // --font-family-primary
+  // --font-family-title
+  // --font-family-brand
 
-  --ff-title: serif;
-  --fs-base: #{util.fluid(16px, 18px)};
-  --fs-h1: #{util.fluid(40px, 80px)};
-  --fs-h2: #{util.fluid(34px, 64px)};
+  --font-size-base: #{util.fluid(18px, 21px)};
+  --line-height-base: 1.5;
+  --font-size-h1: #{util.fluid(46px, 80px)};
+  --line-height-h1: #{util.fluid(46px, 76px)};
+  --font-size-h2: #{util.fluid(32px, 58px)};
 }
 
 /* Global Defaults */
 body {
-  color: var(--c-text); //c
-  background-color: var(--c-background); //c
-  font-family: var(--ff-primary);
-  font-size: var(--fs-base);
+  min-height: 100vh;
+  color: var(--c-text);
+  background-color: var(--c-background);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
 }
 
 /* Type Defaults */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
 h1 {
-  font-family: var(--ff-title);
-  font-size: var(--fs-h1);
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
 }
 
 /* Layout Defaults */

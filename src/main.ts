@@ -2,6 +2,7 @@ import { mount } from 'svelte';
 
 import '@styles/reset.scss';
 import '@styles/base.scss';
+import '@styles/themes/chill-space/chill-space.scss';
 
 import App from './App.svelte';
 
