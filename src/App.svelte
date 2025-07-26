@@ -9,7 +9,14 @@
   <Hero
     title="Welcome to pstraw.net"
     image="/images/hero.png"
-    subtitle="This is my cozy little home on the internet. I use it to keep track of my media and notes."
+    subtitle="Hello. You've stumbled across my little corner of the internet. This is my personal site where I keep track of my media and notes."
+    feature="stars"
   />
+  <div class="box">
+    <h2>Media</h2>
+  </div>
+  <div class="box">
+    <h2>Notes</h2>
+  </div>
   <Footer />
 </main>

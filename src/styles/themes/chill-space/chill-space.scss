@@ -1,53 +1,99 @@
 /**
  * Chill Space Theme
  */
+@use '@styles/util';
 
 :root {
   // Colors
-  --c-primary: #000;
-  --c-secondary: #000;
-  --c-tertiary: #000;
-  --c-quaternary: #000;
-  --c-background: #000;
-  --c-text: #fff;
+  --c-primary: rgb(21, 189, 247);
+  --c-secondary: rgb(59, 82, 217);
+  --c-tertiary: rgb(168, 84, 191);
+  --c-quaternary: rgb(252, 211, 77);
+  --c-background: #0a0a0f;
+  --c-background-gradient: radial-gradient(ellipse at center, var(--c-background) 0%, black 70%);
+
+  --c-text: #e2e8f0;
+  --c-text-secondary: #94a3b8;
+  --c-text-muted: #64748b;
+  --c-text-gradient: linear-gradient(
+    135deg,
+    var(--c-tertiary) 0%,
+    var(--c-secondary) 30%,
+    var(--c-text) 60%,
+    var(--c-quaternary) 100%
+  );
 
   // Fonts
   --font-family-primary:
-    'Source Sans 3', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial,
+    'Space Grotesk', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial,
     sans-serif;
   --font-family-title:
     'Oxanium', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
   --font-family-brand:
     'Bitcount Prop Single', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial,
     sans-serif;
+
+  // Hero
+  --hero-text-size: #{util.px-to-rem(20px)};
+  --hero-gradient: linear-gradient(
+    135deg,
+    rgba(10, 10, 15, 0.9) 0%,
+    rgba(124, 58, 237, 0.03) 50%,
+    rgba(0, 0, 0, 0.95) 100%
+  );
+  --hero-text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/**
+ * Globals
+ */
+body {
+  background: var(--c-background-gradient);
+}
+
+h2,
+h3 {
+  animation: shimmer 3s ease-in-out infinite alternate;
+}
+
+/**
+ * Animations
+ */
+@keyframes shimmer {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(30deg);
+  }
 }
 
 /**
  * Fonts
  */
-// Bitcount Prop Single Regular
+// Space Grotesk Regular
 @font-face {
-  font-family: 'Bitcount Prop Single';
-  src: url('/fonts/BitcountPropSingle-Regular.woff2') format('woff2');
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-// Bitcount Prop Single Light
+// Space Grotesk Medium
 @font-face {
-  font-family: 'Bitcount Prop Single';
-  src: url('/fonts/BitcountPropSingle-Light.woff2') format('woff2');
-  font-weight: 300;
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-// Bitcount Prop Single Thin
+// Space Grotesk Bold
 @font-face {
-  font-family: 'Bitcount Prop Single';
-  src: url('/fonts/BitcountPropSingle-Thin.woff2') format('woff2');
-  font-weight: 100;
+  font-family: 'Space Grotesk';
+  src: url('/fonts/SpaceGrotesk-Bold.woff2') format('woff2');
+  font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
@@ -56,43 +102,16 @@
 @font-face {
   font-family: 'Oxanium';
   src: url('/fonts/Oxanium-SemiBold.woff2') format('woff2');
-  font-weight: normal; // 600
+  font-weight: normal; // actually 600
   font-style: normal;
   font-display: swap;
 }
 
-// Source Sans 3 Regular
+// Bitcount Prop Single Light
 @font-face {
-  font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-Regular.woff2') format('woff2');
-  font-weight: normal;
+  font-family: 'Bitcount Prop Single';
+  src: url('/fonts/BitcountPropSingle-Light.woff2') format('woff2');
+  font-weight: normal; // actually 300
   font-style: normal;
-  font-display: swap;
-}
-
-// Source Sans 3 Bold
-@font-face {
-  font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-Bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-// Source Sans 3 Italic
-@font-face {
-  font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-Italic.woff2') format('woff2');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-// Source Sans 3 Bold Italic
-@font-face {
-  font-family: 'Source Sans 3';
-  src: url('/fonts/SourceSans3-BoldItalic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
   font-display: swap;
 }

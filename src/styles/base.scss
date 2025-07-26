@@ -9,13 +9,16 @@
   // --c-quaternary
   // --c-background
   // --c-text
-  // etc
+  // --c-text-secondary
+  // --c-text-muted
 
   // Spacing
   --space-max-width: 1200px;
 
   --space-page-h: 2rem;
   --space-page-v: 4rem;
+
+  --space-box-v: 6rem;
 
   --space-button-h: 1rem;
   --space-button-v: 0.75rem;
@@ -26,9 +29,9 @@
   // --font-family-title
   // --font-family-brand
 
-  --font-size-base: #{util.fluid(18px, 21px)};
-  --line-height-base: 1.5;
-  --font-size-h1: #{util.fluid(46px, 80px)};
+  --font-size-base: #{util.px-to-rem(18px)};
+  --line-height-base: 1.6;
+  --font-size-h1: #{util.fluid(46px, 90px)};
   --line-height-h1: #{util.fluid(46px, 76px)};
   --font-size-h2: #{util.fluid(32px, 58px)};
 }
@@ -37,7 +40,7 @@
 body {
   min-height: 100vh;
   color: var(--c-text);
-  background-color: var(--c-background);
+  background: var(--c-background);
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
 }
@@ -55,9 +58,22 @@ h1 {
 }
 
 /* Layout Defaults */
-.box {
+.box,
+.container {
   position: relative;
   margin-left: auto;
   margin-right: auto;
   max-width: var(--space-max-width);
+}
+
+.box {
+  padding-top: var(--space-box-v);
+  padding-bottom: var(--space-box-v);
+}
+
+/* Utils */
+.text-gradient {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

@@ -1,5 +1,5 @@
 <nav>
-  <div class="box nav_content">
+  <div class="container nav_content">
     <div class="nav_left">
       <a href="/" class="logo">pstraw.net</a>
     </div>
@@ -37,5 +37,12 @@
 
   a {
     font-size: 1rem;
+    font-weight: 500;
+    color: var(--c-text-secondary);
+    transition: 0.3s ease;
+
+    &:hover {
+      color: var(--c-text);
+    }
   }
 </style>
