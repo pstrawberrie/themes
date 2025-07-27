@@ -1,5 +1,5 @@
 <script lang="ts">
-  let { title, image, subtitle = undefined, feature = undefined } = $props();
+  let { title, image, subtitle = undefined, buttons = [], feature = undefined } = $props();
 </script>
 
 <div class="hero">
@@ -8,6 +8,13 @@
       <h1>{title}</h1>
       {#if subtitle}
         <p>{subtitle}</p>
+      {/if}
+      {#if buttons.length > 0 && buttons[0].title && buttons[0].href}
+        <div class="hero_buttons">
+          {#each buttons as button}
+            <a class="btn {button.class || ''}" href={button.href}>{button.title}</a>
+          {/each}
+        </div>
       {/if}
     </div>
     {#if image}
@@ -70,6 +77,22 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-page-h);
+  }
+
+  .hero_buttons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    @include util.mq(sm) {
+      flex-direction: row;
+    }
+
+    @include util.mq(md) {
+      justify-content: flex-start;
+    }
   }
 
   h1 {
