@@ -3,8 +3,9 @@
   import Footer from '@components/Footer.svelte';
   import Hero from '@components/Hero.svelte';
   import TMDBCard from '@components/TMDBCard.svelte';
+  import NoteCard from '@components/NoteCard.svelte';
 
-  const mockupCards = [
+  const mockupTMDB = [
     {
       collection: 'shows',
       poster_path: '/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg',
@@ -112,6 +113,56 @@
       updatedAt: '2025-07-07 21:30:50.002 +00:00',
     },
   ];
+
+  const mockupNotes = [
+    {
+      collection: 'notes',
+      id: 'pswg-dev-tracking',
+      slug: 'pswg-dev-tracking',
+      title: 'pSWG Development Tracking',
+      date: '2025-06-20T00:00:00.000Z',
+      updated: '2025-07-14T00:00:00.000Z',
+      description: 'Development tracking and details for the pSWG server',
+      authors: ['pstraw'],
+      tags: ['swg', 'dev'],
+      published: true,
+    },
+    {
+      collection: 'notes',
+      id: 'swgemu-server-reference',
+      slug: 'swgemu-server-reference',
+      title: 'SWGEmu Server Setup Reference',
+      date: '2025-05-15T00:00:00.000Z',
+      updated: '2025-06-26T00:00:00.000Z',
+      description: 'Notes on setting up a SWGEmu server with WSL on Windows',
+      authors: ['pstraw'],
+      tags: ['dev', 'linux', 'swg'],
+      published: true,
+    },
+    {
+      collection: 'notes',
+      id: 'development-resources',
+      slug: 'development-resources',
+      title: 'Development Resources',
+      updated: '2025-05-15T00:00:00.000Z',
+      date: '2025-01-07T00:00:00.000Z',
+      description: 'A working list containing links for various areas of development',
+      authors: ['pstraw'],
+      tags: ['dev'],
+      published: true,
+    },
+    {
+      collection: 'notes',
+      id: 'thanks',
+      slug: 'thanks',
+      title: 'Thanks',
+      date: '2025-01-01T00:00:00.000Z',
+      description: 'Thanks to everybody who helped make this site possible!',
+      authors: ['pstraw'],
+      tags: ['general'],
+      published: true,
+    },
+  ];
 </script>
 
 <main id="main-content">
@@ -133,7 +184,7 @@
         <p>New stuff, old stuff, hot stuff, cold stuff. These are the latest eye-gluers.</p>
       </div>
       <div class="movies-grid">
-        {#each mockupCards as item, index}
+        {#each mockupTMDB as item, index}
           <TMDBCard data={item} {index} />
         {/each}
       </div>
@@ -143,7 +194,12 @@
     <div class="container">
       <div class="section-header">
         <h2>Latest Notes</h2>
-        <p>Because I didn't want to call them posts because this isn't a blog. It's a notes.</p>
+        <p>Because it's not a blog - it's a notes.</p>
+      </div>
+      <div class="notes-grid">
+        {#each mockupNotes as item, index}
+          <NoteCard data={item} {index} />
+        {/each}
       </div>
     </div>
   </section>
@@ -158,6 +214,17 @@
   }
 
   .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+
+    @include util.mq(md) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 1.5rem;

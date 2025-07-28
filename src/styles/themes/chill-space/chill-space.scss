@@ -4,19 +4,33 @@
 @use '@styles/util';
 
 :root {
+  --primary-rgb: 21, 189, 247;
+  --p: rgb(21, 189, 247); // ide preview
+
+  --secondary-rgb: 59, 82, 217;
+  --p: rgb(59, 82, 217); // ide preview
+
+  --tertiary-rgb: 168, 84, 191;
+  --p: rgb(168, 84, 191); // ide preview
+
+  --quaternary-rgb: 252, 211, 77;
+  --p: rgb(252, 211, 77); // ide preview
+
+  --background-rgb: 10, 10, 15;
+  --p: rgb(10, 10, 15); // ide preview
+
   // Colors
-  --c-primary: rgb(21, 189, 247);
-  --c-secondary: rgb(59, 82, 217);
-  --c-tertiary: rgb(168, 84, 191);
-  --c-quaternary: rgb(252, 211, 77);
-  --c-background: rgb(10, 10, 15);
+  --c-primary: rgb(var(--primary-rgb));
+  --c-secondary: rgb(var(--secondary-rgb));
+  --c-tertiary: rgb(var(--tertiary-rgb));
+  --c-quaternary: rgb(var(--quaternary-rgb));
+  --c-background: rgb(var(--background-rgb));
   --c-background-gradient: radial-gradient(ellipse at center, var(--c-background) 0%, black 70%);
   --c-background-gradient-2: linear-gradient(
     135deg,
-    rgba(10, 10, 15, 0.4) 0%,
+    rgba(var(--background-rgb), 0.4) 0%,
     rgba(0, 0, 0, 0.9) 100%
   );
-  --c-background-gradient-3: linear-gradient(135deg, var(--space-dark) 0%, var(--void-black) 100%);
 
   --c-button-gradient: linear-gradient(135deg, var(--c-secondary), var(--c-tertiary));
 
@@ -31,9 +45,9 @@
     var(--c-quaternary) 100%
   );
 
-  --c-card-background: rgba(10, 10, 15, 0.85);
+  --c-card-background: rgba(var(--background-rgb), 0.85);
   --c-card-content-background: rgba(100, 116, 139, 0.2);
-  --c-card-content-background-text: rgb(100, 116, 139);
+  --c-card-content-background-text: rgb(112, 130, 155);
   --c-card-border: rgba(100, 116, 139, 0.15);
   --c-card-separator: rgba(100, 116, 139, 0.1);
 
@@ -43,6 +57,8 @@
     sans-serif;
   --font-family-title:
     'Oxanium', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  --font-family-mono:
+    'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   --font-family-brand:
     'Bitcount Prop Single', 'Inter', 'Roboto', 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial,
     sans-serif;
@@ -51,7 +67,7 @@
   --hero-text-size: #{util.px-to-rem(20px)};
   --hero-gradient: linear-gradient(
     135deg,
-    rgba(10, 10, 15, 0.9) 0%,
+    rgba(var(--background-rgb), 0.9) 0%,
     rgba(124, 58, 237, 0.03) 50%,
     rgba(0, 0, 0, 0.95) 100%
   );
@@ -77,10 +93,10 @@ button,
   backdrop-filter: blur(10px);
 
   &:hover {
-    background: rgba(10, 10, 15, 0.6);
+    background: rgba(var(--background-rgb), 0.6);
     border-color: var(--c-primary);
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(21, 189, 247, 0.12);
+    box-shadow: 0 0 20px rgba(var(--tertiary-rgb), 0.12);
   }
 }
 
@@ -88,10 +104,10 @@ button.cta,
 .btn.cta {
   border: 0;
   background: var(--c-button-gradient);
-  box-shadow: 0 0 20px rgba(59, 82, 217, 0.5);
+  box-shadow: 0 0 20px rgba(var(--tertiary-rgb), 0.5);
 
   &:hover {
-    box-shadow: 0 10px 40px rgba(59, 82, 217, 0.6);
+    box-shadow: 0 10px 40px rgba(var(--tertiary-rgb), 0.6);
   }
 }
 
