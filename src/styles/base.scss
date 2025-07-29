@@ -35,6 +35,11 @@
   --line-height-h1: #{util.fluid(56px, 100px)};
   --font-size-h2: #{util.fluid(38px, 48px)};
   --line-height-h2: #{util.fluid(48px, 58px)};
+
+  // Shadows
+  --shadow-direction-x: -4px;
+  --shadow-direction-y: 4px;
+  --shadow-direction: var(--shadow-direction-x) var(--shadow-direction-y);
 }
 
 /* Global Defaults */
