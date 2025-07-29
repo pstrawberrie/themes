@@ -7,24 +7,33 @@
   --primary-rgb: 21, 189, 247;
   --p: rgb(21, 189, 247); // ide preview
 
-  --secondary-rgb: 59, 82, 217;
-  --p: rgb(59, 82, 217); // ide preview
+  --secondary-rgb: 59, 217, 183;
+  --p: rgb(59, 217, 183); // ide preview
 
   --tertiary-rgb: 168, 84, 191;
   --p: rgb(168, 84, 191); // ide preview
 
-  --quaternary-rgb: 252, 211, 77;
+  --quaternary-rgb: 120, 27, 182;
+  --p: rgb(120, 27, 182); // ide preview
+
+  --quinary-rgb: 252, 211, 77;
   --p: rgb(252, 211, 77); // ide preview
 
   --background-rgb: 10, 10, 15;
   --p: rgb(10, 10, 15); // ide preview
+
+  --background-accent-rgb: 100, 116, 139;
+  --p: rgb(100, 116, 139); // ide preview
 
   // Colors
   --c-primary: rgb(var(--primary-rgb));
   --c-secondary: rgb(var(--secondary-rgb));
   --c-tertiary: rgb(var(--tertiary-rgb));
   --c-quaternary: rgb(var(--quaternary-rgb));
+  --c-quinary: rgb(var(--quinary-rgb));
   --c-background: rgb(var(--background-rgb));
+  --c-background-accent: rgb(var(--background-accent-rgb));
+
   --c-background-gradient: radial-gradient(ellipse at center, var(--c-background) 0%, black 70%);
   --c-background-gradient-2: linear-gradient(
     135deg,
@@ -32,10 +41,12 @@
     rgba(0, 0, 0, 0.9) 100%
   );
 
-  --c-button-gradient: linear-gradient(135deg, var(--c-secondary), var(--c-tertiary));
+  --c-button-border: rgba(var(--background-accent-rgb), 0.3);
+  --c-button-gradient: linear-gradient(135deg, var(--c-tertiary), var(--c-quaternary));
 
   --c-text: #e2e8f0;
   --c-text-secondary: #94a3b8;
+  --c-text-tertiary: #475569;
   --c-text-muted: #64748b;
   --c-text-gradient: linear-gradient(
     135deg,
@@ -46,10 +57,10 @@
   );
 
   --c-card-background: rgba(var(--background-rgb), 0.85);
-  --c-card-content-background: rgba(100, 116, 139, 0.2);
+  --c-card-content-background: rgba(var(--background-accent-rgb), 0.2);
   --c-card-content-background-text: rgb(112, 130, 155);
-  --c-card-border: rgba(100, 116, 139, 0.15);
-  --c-card-separator: rgba(100, 116, 139, 0.1);
+  --c-card-border: rgba(var(--background-accent-rgb), 0.15);
+  --c-card-separator: rgba(var(--background-accent-rgb), 0.1);
 
   // Fonts
   --font-family-primary:
@@ -89,14 +100,14 @@ button,
 .btn {
   background: transparent;
   color: var(--c-text);
-  border: 2px solid rgba(100, 116, 139, 0.3);
+  border: 2px solid var(--c-button-border);
   backdrop-filter: blur(10px);
 
   &:hover {
     background: rgba(var(--background-rgb), 0.6);
-    border-color: var(--c-primary);
+    border-color: var(--c-text-tertiary);
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(var(--tertiary-rgb), 0.12);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
   }
 }
 

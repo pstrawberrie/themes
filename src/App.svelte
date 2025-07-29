@@ -169,12 +169,12 @@
   <Nav />
   <Hero
     title="Welcome to pstraw.net"
-    image="/images/hero.png"
+    image="/images/character.png"
     subtitle="Hello. You've stumbled across my little corner of the internet. This is my personal site where I keep track of my media and notes."
     feature="stars"
     buttons={[
-      { title: 'View Recent Watches', href: '#media', class: 'cta' },
-      { title: 'View Latest Notes', href: '#notes' },
+      { title: 'Recent Watches', href: '#media', class: 'cta' },
+      { title: 'Latest Notes', href: '#notes' },
     ]}
   />
   <section class="box" id="media">
@@ -188,18 +188,24 @@
           <TMDBCard data={item} {index} />
         {/each}
       </div>
+      <div class="grid-cta">
+        <a href="#media" class="btn">Browse All Media →</a>
+      </div>
     </div>
   </section>
   <section class="box" id="notes">
     <div class="container">
       <div class="section-header">
         <h2>Latest Notes</h2>
-        <p>Because it's not a blog - it's a notes.</p>
+        <p>References, resources, tall tales, .</p>
       </div>
       <div class="notes-grid">
         {#each mockupNotes as item, index}
           <NoteCard data={item} {index} />
         {/each}
+      </div>
+      <div class="grid-cta">
+        <a href="#notes" class="btn">Browse All Notes →</a>
       </div>
     </div>
   </section>
@@ -232,6 +238,20 @@
     @include util.mq(md) {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
+    }
+  }
+
+  .grid-cta {
+    display: block;
+    padding-top: 1.5rem;
+    text-align: center;
+
+    .btn {
+      display: inline-block;
+    }
+
+    @include util.mq(md) {
+      padding-top: 2rem;
     }
   }
 </style>

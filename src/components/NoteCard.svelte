@@ -37,7 +37,12 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(135deg, var(--c-primary) 50%, var(--c-secondary) 100%);
+      background: linear-gradient(
+        135deg,
+        var(--c-primary) 0%,
+        var(--c-secondary) 50%,
+        var(--c-primary) 100%
+      );
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
@@ -54,8 +59,8 @@
       border-color: rgba(var(--primary-rgb), 0.11);
       background: linear-gradient(
         135deg,
-        rgba(var(--primary-rgb), 0.1),
-        rgba(var(--secondary-rgb), 0.1)
+        rgba(var(--primary-rgb), 0.075),
+        rgba(var(--secondary-rgb), 0.075)
       );
 
       @include util.mq(md) {

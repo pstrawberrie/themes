@@ -1,6 +1,5 @@
 <script lang="ts">
   let { data, index } = $props();
-  console.log(data); //REMOVE
 
   const isMovie = data.collection === 'movies';
   const releaseYear = isMovie
@@ -54,7 +53,12 @@
       left: 0;
       right: 0;
       height: 2px;
-      background: linear-gradient(135deg, var(--c-tertiary) 50%, var(--c-quaternary) 100%);
+      background: linear-gradient(
+        135deg,
+        var(--c-quaternary) 0%,
+        var(--c-tertiary) 50%,
+        var(--c-quaternary) 100%
+      );
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
