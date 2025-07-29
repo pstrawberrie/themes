@@ -177,10 +177,10 @@
       { title: 'Latest Notes', href: '#notes' },
     ]}
   />
-  <section class="box" id="media">
-    <div class="container">
+  <section id="media">
+    <div class="container box">
       <div class="section-header">
-        <h2>Recently Watched</h2>
+        <h2 class="header-tertiary text-gradient">Recently Watched</h2>
         <p>New stuff, old stuff, hot stuff, cold stuff. These are the latest eye-gluers.</p>
       </div>
       <div class="movies-grid">
@@ -193,11 +193,11 @@
       </div>
     </div>
   </section>
-  <section class="box" id="notes">
-    <div class="container">
+  <section id="notes">
+    <div class="container box">
       <div class="section-header">
-        <h2>Latest Notes</h2>
-        <p>References, resources, tall tales, .</p>
+        <h2 class="header-primary text-gradient">Latest Notes</h2>
+        <p>Records of various references, resources, and remembrances.</p>
       </div>
       <div class="notes-grid">
         {#each mockupNotes as item, index}
@@ -221,7 +221,7 @@
 
   .movies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 
     @include util.mq(md) {
@@ -232,7 +232,7 @@
 
   .notes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.5rem;
 
     @include util.mq(md) {
@@ -243,7 +243,7 @@
 
   .grid-cta {
     display: block;
-    padding-top: 1.5rem;
+    padding-top: 2.75rem;
     text-align: center;
 
     .btn {
@@ -251,7 +251,7 @@
     }
 
     @include util.mq(md) {
-      padding-top: 2rem;
+      padding-top: var(--space-page-v);
     }
   }
 </style>

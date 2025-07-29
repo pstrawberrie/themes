@@ -36,12 +36,14 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 1px;
       background: linear-gradient(
         135deg,
-        var(--c-primary) 0%,
+        rgba(0, 0, 0, 0) 0%,
+        var(--c-primary) 10%,
         var(--c-secondary) 50%,
-        var(--c-primary) 100%
+        var(--c-primary) 90%,
+        rgba(0, 0, 0, 0) 100%
       );
       transform: scaleX(0);
       transition: transform 0.3s ease;

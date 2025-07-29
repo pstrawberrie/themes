@@ -1,5 +1,10 @@
 @use 'util';
 
+$max-width: 1200px;
+$max-width-sm: 800px;
+$space-h: 2rem;
+$space-v: 4rem;
+
 /* Theme Defaults */
 :root {
   // Colors inherit from theme
@@ -13,12 +18,13 @@
   // --c-text-muted
 
   // Spacing
-  --space-max-width: 1200px;
+  --space-max-width: #{$max-width};
+  --space-max-width-sm: #{$max-width-sm};
 
-  --space-page-h: 2rem;
-  --space-page-v: 4rem;
+  --space-page-h: #{$space-h};
+  --space-page-v: #{$space-v};
 
-  --space-box-v: 4rem;
+  --space-box-v: 6rem;
 
   --space-button-h: 2rem;
   --space-button-v: 1rem;
@@ -87,7 +93,8 @@ h2 {
 
 /* Layout Defaults */
 .box,
-.container {
+.container,
+.container-sm {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -102,6 +109,22 @@ h2 {
 .container {
   padding-left: var(--space-page-h);
   padding-right: var(--space-page-h);
+
+  @media (min-width: calc($max-width + ($space-h * 2))) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.container-sm {
+  padding-left: var(--space-page-h);
+  padding-right: var(--space-page-h);
+  max-width: var(--space-max-width-sm);
+
+  @media (min-width: calc($max-width-sm + ($space-h * 2))) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .section-header {

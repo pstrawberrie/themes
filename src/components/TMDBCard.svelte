@@ -52,12 +52,14 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 1px;
       background: linear-gradient(
         135deg,
-        var(--c-quaternary) 0%,
+        rgba(0, 0, 0, 0) 0%,
+        var(--c-quaternary) 10%,
         var(--c-tertiary) 50%,
-        var(--c-quaternary) 100%
+        var(--c-quaternary) 90%,
+        rgba(0, 0, 0, 0) 100%
       );
       transform: scaleX(0);
       transition: transform 0.3s ease;

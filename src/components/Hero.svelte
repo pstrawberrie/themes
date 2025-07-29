@@ -56,7 +56,7 @@
     align-items: center;
     min-height: 100vh;
     background: var(--hero-gradient);
-    padding: var(--space-page-v) var(--space-page-h);
+    padding: var(--space-page-v) 0;
     overflow: hidden;
   }
 
