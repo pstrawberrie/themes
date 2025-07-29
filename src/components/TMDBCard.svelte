@@ -63,8 +63,11 @@
       transition: transform 0.3s ease;
     }
 
-    &:hover {
+    &::after {
       box-shadow: 0 20px 60px rgba(var(--tertiary-rgb), 0.2);
+    }
+
+    &:hover {
       img {
         transform: scale(1.05);
       }

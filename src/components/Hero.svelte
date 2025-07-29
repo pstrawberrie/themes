@@ -106,4 +106,26 @@
     font-weight: 500;
     color: var(--c-text-secondary);
   }
+
+  img {
+    position: relative;
+    top: -10px;
+    max-width: 40%;
+    animation: float 6s ease-in-out infinite;
+    z-index: 2;
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    @include util.mq(md) {
+      max-width: 100%;
+    }
+  }
 </style>

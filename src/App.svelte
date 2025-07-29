@@ -165,8 +165,8 @@
   ];
 </script>
 
+<Nav />
 <main id="main-content">
-  <Nav />
   <Hero
     title="Welcome to pstraw.net"
     image="/images/character.png"

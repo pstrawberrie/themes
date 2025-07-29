@@ -35,11 +35,9 @@
   --c-background-accent: rgb(var(--background-accent-rgb));
 
   --c-background-gradient: radial-gradient(ellipse at center, var(--c-background) 0%, black 70%);
-  --c-background-gradient-2: linear-gradient(
-    135deg,
-    rgba(var(--background-rgb), 0.4) 0%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
+  --c-background-gradient-2: linear-gradient(135deg,
+      rgba(var(--background-rgb), 0.4) 0%,
+      rgba(0, 0, 0, 0.9) 100%);
 
   --c-button-border: rgba(var(--background-accent-rgb), 0.3);
   --c-button-gradient: linear-gradient(135deg, var(--c-tertiary), var(--c-quaternary));
@@ -48,13 +46,11 @@
   --c-text-secondary: #94a3b8;
   --c-text-tertiary: #475569;
   --c-text-muted: #64748b;
-  --c-text-gradient: linear-gradient(
-    135deg,
-    var(--c-tertiary) 0%,
-    var(--c-secondary) 30%,
-    var(--c-text) 60%,
-    var(--c-quaternary) 100%
-  );
+  --c-text-gradient: linear-gradient(135deg,
+      var(--c-tertiary) 0%,
+      var(--c-secondary) 30%,
+      var(--c-text) 60%,
+      var(--c-quaternary) 100%);
 
   --c-card-background: rgba(var(--background-rgb), 0.85);
   --c-card-content-background: rgba(var(--background-accent-rgb), 0.2);
@@ -76,12 +72,10 @@
 
   // Hero
   --hero-text-size: #{util.px-to-rem(20px)};
-  --hero-gradient: linear-gradient(
-    135deg,
-    rgba(var(--background-rgb), 0.9) 0%,
-    rgba(124, 58, 237, 0.03) 50%,
-    rgba(0, 0, 0, 0.95) 100%
-  );
+  --hero-gradient: linear-gradient(135deg,
+      rgba(var(--background-rgb), 0.9) 0%,
+      rgba(124, 58, 237, 0.03) 50%,
+      rgba(0, 0, 0, 0.95) 100%);
   --hero-text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 
@@ -136,6 +130,27 @@ h3 {
   }
 }
 
+.card {
+  &::after {
+    // box shadows should be in ::after and opacity-animated for performance
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
 /**
  * Animations
  */
@@ -143,6 +158,7 @@ h3 {
   0% {
     filter: hue-rotate(0deg);
   }
+
   100% {
     filter: hue-rotate(30deg);
   }
