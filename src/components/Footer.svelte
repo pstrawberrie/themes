@@ -48,13 +48,20 @@
 
     p {
       font-size: 1rem;
-      max-width: 300px;
+
+      @include util.mq(md) {
+        max-width: 300px;
+      }
     }
   }
 
   .logo {
     display: block;
     margin-bottom: 0.5rem;
+
+    @include util.mq(md) {
+      margin-right: auto;
+    }
   }
 
   .bottom {

@@ -39,6 +39,8 @@ $space-v: 4rem;
   --line-height-base: 1.6;
   --font-size-h1: #{util.fluid(46px, 90px)};
   --line-height-h1: #{util.fluid(56px, 100px)};
+  --font-size-h1-sm: #{util.fluid(46px, 64px)};
+  --line-height-h1-sm: #{util.fluid(46px, 70px)};
   --font-size-h2: #{util.fluid(38px, 48px)};
   --line-height-h2: #{util.fluid(48px, 58px)};
 
@@ -79,14 +81,19 @@ p {
   line-height: var(--line-height-base);
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-family-title);
+}
+
+h1 {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
 }
 
 h2 {
-  font-family: var(--font-family-title);
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
 }
@@ -117,14 +124,7 @@ h2 {
 }
 
 .container-sm {
-  padding-left: var(--space-page-h);
-  padding-right: var(--space-page-h);
   max-width: var(--space-max-width-sm);
-
-  @media (min-width: calc($max-width-sm + ($space-h * 2))) {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }
 
 .section-header {

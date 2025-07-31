@@ -24,7 +24,7 @@
     {/if}
   </div>
   {#if feature === 'stars'}
-    @TODO stars
+    <!-- @TODO stars -->
   {/if}
 </div>
 

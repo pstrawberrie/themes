@@ -166,17 +166,17 @@
 </script>
 
 <Nav />
+<Hero
+  title="Welcome to pstraw.net"
+  image="/images/character.png"
+  subtitle="Hello. You've stumbled across my little corner of the internet. This is my personal site where I keep track of my media and notes."
+  feature="stars"
+  buttons={[
+    { title: 'Recent Watches', href: '#media', class: 'cta' },
+    { title: 'Latest Notes', href: '#notes' },
+  ]}
+/>
 <main id="main-content">
-  <Hero
-    title="Welcome to pstraw.net"
-    image="/images/character.png"
-    subtitle="Hello. You've stumbled across my little corner of the internet. This is my personal site where I keep track of my media and notes."
-    feature="stars"
-    buttons={[
-      { title: 'Recent Watches', href: '#media', class: 'cta' },
-      { title: 'Latest Notes', href: '#notes' },
-    ]}
-  />
   <section id="media">
     <div class="container box">
       <div class="section-header">
@@ -209,8 +209,8 @@
       </div>
     </div>
   </section>
-  <Footer />
 </main>
+<Footer />
 
 <style lang="scss">
   @use '@styles/util';
